@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name='connection.driver_class'>com.mysql.jdbc.Driver</property>
+        
+         <!-- Noida_database details -->
+		 <!--   <property name='connection.url'>jdbc:mysql://172.16.1.15:3306/opsbank-ii</property>
+        <property name='connection.username'>root1</property>
+        <property name='connection.password'>P@ssw0rd</property>  -->
+        
+   		 <!-- chndc_test database details added by charishma on 21-03-2016 -->
+  		 <property name='connection.url'>jdbc:mysql://10.10.11.234:3306/opsbank-ii</property>
+        <property name='connection.username'>root</property>
+        <property name='connection.password'>p@ssw0rd</property>
+        
+         <!-- chndc_Live database details added by charishma on 31-03-2016 -->
+  		<!--  <property name='connection.url'>jdbc:mysql://10.10.10.14:3306/opsbank-ii</property>
+        <property name='connection.username'>root</property>
+        <property name='connection.password'>p@ssw0rd</property> -->
+        
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name='connection.pool_size'>10</property>
+
+        <!-- SQL dialect -->
+        <property name='dialect'>org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name='show_sql'>true</property>
+        
+       <mapping resource="empdetails.hbm.xml"/>
+       <mapping resource="tracking.hbm.xml"/>  
+    
+    </session-factory>
+</hibernate-configuration>
